@@ -4,6 +4,7 @@ import { useOktaAuth } from '@okta/okta-react';
 import Layout from '../components/Layout';
 import { useRouter } from 'next/router';
 import { Header, Icon, Table } from 'semantic-ui-react';
+import styles from './Profile.module.css'; // Import the CSS module
 
 const Profile: React.FC = () => {
     const { authState, oktaAuth } = useOktaAuth();
@@ -33,24 +34,11 @@ const Profile: React.FC = () => {
     return (
         <Layout>
             <div>
-                <h1>User Profile</h1>
                 <button onClick={logout}>Logout</button>
-                <div>
-                    <Header as="h1">
-                        <Icon name="drivers license" /> My User Profile (ID Token Claims)
-                    </Header>
-                    <p>
-                        Below is the information from your ID token which was obtained during the&nbsp;
-                        <a href="https://developer.okta.com/docs/guides/implement-auth-code-pkce">PKCE Flow</a>
-                        &nbsp;and is now stored in local storage.
-                    </p>
-                    <p>
-                        This route is protected with the&nbsp;
-                        <code>&lt;SecureRoute&gt;</code>
-                        &nbsp;component, which will ensure that this page cannot be accessed until you have authenticated.
-                    </p>
+                <h1>User Profile</h1>
+                <div className={styles.tableMargin}>
                     {userInfo ? (
-                        <Table>
+                        <Table className={styles.table}>
                             <thead>
                                 <tr>
                                     <th>Claim</th>
