@@ -17,3 +17,7 @@
 .tableMargin {
     margin-top: 50px;
 }
+.scrollableContainer {
+    max-height: 400px; /* Adjust the max-height according to your design */
+    overflow-y: auto;
+}

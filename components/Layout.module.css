@@ -1,14 +1,22 @@
 /* styles/Layout.module.css */
 .navItem {
     margin: 0 10px;
+    display: flex;
+    align-items: center;
+    height: 100%; /* Ensure li elements take full height */
 }
 
 .navLink {
     color: white;
     background-color: black;
-    padding: 5px 10px;
+    padding: 20px; /* Adjust padding as necessary */
     text-decoration: none;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px; /* Set fixed width */
+    height: 100%; /* Ensure a elements take full height */
+    box-sizing: border-box;
 }
 
 .activeNavLink {
